@@ -86,15 +86,15 @@ export default function Page() {
               ) : null}
             </div>
           </div>
-
-          <Avatar className="h-28 w-28">
-            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
-            <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+          <Avatar className="h-32 w-32">
+            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} className="object-cover rounded-full" />
+            <AvatarFallback className="rounded-full" >{RESUME_DATA.initials} </AvatarFallback>
           </Avatar>
+
         </div>
         <Section>
           <h2 className="text-xl font-bold">About</h2>
-          <p className="text-pretty font-mono text-sm text-muted-foreground">
+          <p className="text-pretty font-mono text-sm text-muted-foreground text-justify">
             {RESUME_DATA.summary}
           </p>
         </Section>
@@ -162,7 +162,7 @@ export default function Page() {
           <h2 className="text-xl font-bold">Skills</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.skills.map((skill) => {
-              return <Badge key={skill}>{skill}</Badge>;
+              return <Badge className="" key={skill}>{skill}</Badge>;
             })}
           </div>
         </Section>
